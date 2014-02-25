@@ -22,7 +22,7 @@ public class NQueen {
 		return newBirth;
 	}
 	
-	public int fitness(int[] inSol){ //ça prend un tableau à une dimension alors que le voisinnage renvoie un tableau à 2 dimensions, c'est pas pratique, faut uniformiser
+	public int fitness(int[] inSol){
 		int fit = 0 ;
 		
 		for(int i=0; i<dim; ++i){
@@ -39,7 +39,7 @@ public class NQueen {
 		return fit;
 	}
 	
-	public int[][] voisinage( int[] inSol, int[][] tabu){ //voir commentaire de fitness
+	public int[][] voisinage( int[] inSol, int[][] tabu){ //comme faut mettre à jour le tabu fréquemment, serait ptet quand même plus intéressant d'avoir autre chose qu'un tableau primitif à 2 dimensions
 		int[][] voisin = new int[dim][dim+1];
 		int[] courant = new int[dim+1];
 		
