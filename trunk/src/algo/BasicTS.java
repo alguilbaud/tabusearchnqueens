@@ -1,6 +1,6 @@
 package algo;
 
-import java.util.ArrayList;
+import problem.NQueen;
 
 public class BasicTS {
 	private int maxIter;
@@ -19,7 +19,7 @@ public class BasicTS {
 		int k = 0;
 		while(k<maxIter){
 			k++;
-			ArrayList<Integer> v = nqueen.voisinage(s);
+			int[][] v = nqueen.voisinage(s);
 			ArrayList<Integer> best_v = nqueen.fitness(v);
 			s = best_v;
 			if(nqueen.fitness(best_v) < nqueen.fitness(best_s)){
