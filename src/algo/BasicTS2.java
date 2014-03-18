@@ -1,24 +1,24 @@
 package algo;
 
-import problem.NQueen;
+import problem.NQueen2;
 
-public class BasicTS {
+public class BasicTS2 {
 	private int maxIter;
-	private NQueen nqueen;
+	private NQueen2 nqueen;
 	private int dim;
 	private int tailleTabu;
 	
 	// Test d'automatisation des tailles tabu 
-	public BasicTS(int n){
+	public BasicTS2(int n){
 		maxIter = 10*n ;
-		nqueen = new NQueen(n, (int) n/10 );
+		nqueen = new NQueen2(n, (int) n/10 );
 		tailleTabu = (int) n/10;
 		dim = n ;
 	}
 	
-	public BasicTS(int n, int tabu){
+	public BasicTS2(int n, int tabu){
 		maxIter = 10*n;
-		nqueen = new NQueen(n, tabu);
+		nqueen = new NQueen2(n, tabu);
 		tailleTabu = tabu;
 		dim = n ;
 	}
@@ -28,7 +28,7 @@ public class BasicTS {
 		int best = 0 ;
 		int bestFit = dim*dim*dim*dim ;
 		
-		for( int i = 0 ; i < dim*(dim-1) ; ++i)
+		for( int i = 0 ; i < dim*(dim-1)/2 ; ++i)
 		{
 			if( bestFit > inV[i][0])
 			{
@@ -43,15 +43,23 @@ public class BasicTS {
 	public void addTabu(int[] sol, int[] curr, int[][] tabuL, int iterator)
 	{
 		int i = 1 ;
+		int j = 1 ;
 		
 		while( i < dim && sol[i] == curr[i]  )
 		{
 			i++ ;
 		}
 		
+		j = i + 1 ;
+		
+		while( j < dim && sol[j] == curr[j]	)
+		{
+			j++ ;
+		}
+		
 		tabuL[iterator][0] = i ;
-		tabuL[iterator][1] = sol[i] ;
-		tabuL[iterator][2] = curr[i] ;		
+		tabuL[iterator][1] = j ;
+	
 	}
 	
 	public int[] start(){
@@ -60,13 +68,12 @@ public class BasicTS {
 		
 		int[] best_s = s ;
 		
-		int[][] tabulist = new int[tailleTabu][3] ;
+		int[][] tabulist = new int[tailleTabu][2] ;
 		
 		for( int i = 0; i < tailleTabu ; i++)
 		{
 			tabulist[i][0] = 0 ;
 			tabulist[i][1] = 0 ;
-			tabulist[i][2] = 0 ;
 		}
 		
 		int k = 0;
@@ -107,3 +114,4 @@ public class BasicTS {
 		return best_s;
 	}
 }
+

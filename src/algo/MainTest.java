@@ -45,8 +45,9 @@ public class MainTest {
 		
 		if(sol[j][0] == 0)
 		{
-			System.out.println("Solution Trouvé tour " + j ) ;
+			System.out.println("Solution Found Iteration " + j ) ;
 			/*
+			// pour afficher les placement
 			for( int i = 1; i < n+1 ; i++ )
 			{
 				System.out.println("Queen "+ i + " placed " + sol[j][i]) ;
