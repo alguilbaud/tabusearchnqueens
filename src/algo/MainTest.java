@@ -20,8 +20,9 @@ public class MainTest {
 		m = keyboard.nextInt() ;
 		
 		BasicTS TabuTest = new BasicTS(n,m) ;
-		
+		long startTime = System.currentTimeMillis();
 		int[] sol = TabuTest.start() ;
+		long endTime   = System.currentTimeMillis();
 
 		System.out.println("Fitness Best Solution = " + sol[0] ) ;
 		
@@ -40,6 +41,9 @@ public class MainTest {
 				System.out.println("Queen "+ i + " placed " + sol[i]) ;
 			}
 		}
+		
+		long totalTime = endTime - startTime;
+		System.out.println("Temps total : " + totalTime + " ms");
 		
 		keyboard.close() ;
 		
