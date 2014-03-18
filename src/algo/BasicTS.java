@@ -22,65 +22,6 @@ public class BasicTS {
 		dim = n ;
 	}
 	
-	public void tocopyto(int[] to, int[] ex)
-	{
-		int[] temp = new int[dim+1] ;
-		
-		for( int i = 0; i < dim+1 ; ++i )
-		{
-			temp[i] = to[i] ;
-			to[i] = ex[i] ;
-			ex[i] = temp[i] ;
-		}
-	}
-	
-	public void quickSort(int[][] v, int begin, int end)
-	{	
-		if( end - begin > 0 )
-		{
-			int pointeur = begin ;
-
-			for(int i = begin; i < end ; ++i)
-			{
-				if( v[i][0] < v[end][0] )
-				{
-					
-					int[] temp = new int[dim+1] ;
-					temp = v[pointeur] ;
-					v[pointeur] = v[i] ;
-					v[i] = temp ;
-					pointeur ++ ;
-					
-					/*
-					int[] temp = new int[dim+1] ;
-					
-					tocopyto(temp,v[pointeur]) ;
-					tocopyto(v[pointeur],v[i]) ;
-					tocopyto(v[i],temp);
-					pointeur ++ ;
-					*/
-				}
-			}
-
-			int[] temp = new int[dim+1] ;
-			temp = v[pointeur] ;
-			v[pointeur] = v[end] ;
-			v[end] = temp ;
-
-			/*
-			int[] temp = new int[dim+1] ;
-			
-			tocopyto(temp,v[pointeur]) ;
-			tocopyto(v[pointeur],v[end]) ;
-			tocopyto(v[end],temp);
-			*/
-			
-			quickSort(v, begin, pointeur-1) ;
-			quickSort(v, pointeur+1, end) ;
-		}
-		
-	}
-	
 	int findbestfit(int[][] inV)
 	{
 		int best = 0 ;
@@ -143,18 +84,6 @@ public class BasicTS {
 			k++;
 			
 			int[][] v = nqueen.voisinage(best_s[0], s, tabulist);
-			
-			//quickSort(v, 0, (dim*dim)-1 ) ;	
-			/*
-			for(int j = 0; j < dim*(dim-1) ; ++j )
-			{
-				System.out.println("Fitness V " + j + " = " + v[j][0]) ;
-				if( v[j][0] != dim*dim*dim )
-				{
-						System.out.println("Queen 1 placed " +v[j][1]) ;
-				}
-			}
-			*/
 			
 			int bestFit = findbestfit(v) ;
 			
