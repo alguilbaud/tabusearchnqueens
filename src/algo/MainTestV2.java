@@ -1,6 +1,19 @@
 package algo;
 import java.util.Scanner; 
 
+
+/* Version 1.2 du MainTest
+ * 
+ * Version améliorée n'ayant plus de problème de dépassement mémoire.
+ * Correspond à la recherche Tabu, cristallisation des Question 1) 3) et 4).
+ * 
+ * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * 
+ * Main de notre Tabu Search
+ * 
+ */
+
+
 public class MainTestV2 {
 
 	public static void main(String[] args) {

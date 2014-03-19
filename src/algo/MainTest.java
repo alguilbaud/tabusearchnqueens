@@ -1,6 +1,21 @@
 package algo;
 import java.util.Scanner; 
 
+
+/* Version 1 du Maintest
+ * 
+ * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
+ * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000.
+ * Correspond à la recherche Tabu, cristallisation des Question 1) 3) et 4).
+ * 
+ * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * 
+ * Main de notre Tabu Search
+ * 
+ */
+
+
 public class MainTest {
 
 	public static void main(String[] args) {
