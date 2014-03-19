@@ -23,7 +23,7 @@ public class NQueen2 {
 		
 		Vector<Integer> Random = new Vector<Integer>() ;
 		
-		for(int j = 0 ; j < dim+1 ; ++j)
+		for(int j = 0 ; j < dim ; ++j)
 		{
 			Random.add(j+1) ;
 		}

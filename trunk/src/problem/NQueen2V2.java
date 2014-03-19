@@ -34,6 +34,7 @@ public class NQueen2V2 {
 			int k = (int)Math.floor( Math.random()*Random.size() ) ;
 			
 			newBirth[i] = Random.get(k) ; 
+			
 			Random.remove(k) ;
 			
 		}
@@ -73,6 +74,10 @@ public class NQueen2V2 {
 		{
 			for(int j = i+1; j < dim+1; ++j)
 			{
+				if(inSol[i]==inSol[j])
+				{
+					++fit;
+				}
 				if( ((int)Math.abs(inSol[i]-inSol[j])) == (j-i))
 				{
 					++fit;
@@ -86,7 +91,7 @@ public class NQueen2V2 {
 	
 	public int[] findBestFit(int best_s, int[] currSol, int[][] tabuList )
 	{
-		int[] best = new int[5] ;
+		int[] best = new int[3] ;
 		int bestFit = dim*dim*dim*dim ;
 		
 		int[] tempSol = new int[dim+1] ;
