@@ -1,7 +1,7 @@
 package algo;
 import java.util.Scanner; 
 
-public class MainTestV2 {
+public class MainTest2V2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -26,7 +26,7 @@ public class MainTestV2 {
 		
 		
 		
-		BasicTSV2 TabuTest = new BasicTSV2(n,m) ;
+		BasicTS2V2 TabuTest = new BasicTS2V2(n,m) ;
 		
 		int[][] sol = new int[t][n+1] ;
 		
@@ -34,11 +34,11 @@ public class MainTestV2 {
 		
 		int j = 0 ;
 		
-		while( sol[j][0] != 0 && j < t )
+		while( sol[j][0] != 0 && j+1 < t )
 		{
 			++j ;
 			sol[j] = TabuTest.start() ;
-	
+			
 			System.out.println("Fitness Best Solution of " + j +" = "+ sol[j][0] ) ;
 			
 		}
