@@ -58,7 +58,7 @@ public class NQueen2V2 {
 		
 			for( int k = 0; k < tailletabu ; ++k )
 			{
-				if( tabu[k][0] == i && tabu[k][2] == j && tabu[k][1] == fromI && tabu[k][2] == fromJ )
+				if( tabu[k][0] == i && tabu[k][1] == j && tabu[k][2] == fromI && tabu[k][3] == fromJ )
 				{
 					return true ;
 				}

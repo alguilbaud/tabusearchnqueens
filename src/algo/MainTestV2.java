@@ -46,12 +46,13 @@ public class MainTestV2 {
 		if(sol[j][0] == 0)
 		{
 			System.out.println("Solution Found Iteration " + j ) ;
-			
+			/*
 			// pour afficher les placement
 			for( int i = 1; i < n+1 ; i++ )
 			{
 				System.out.println("Queen "+ i + " placed " + sol[j][i]) ;
 			}
+			*/
 		}
 		
 		keyboard.close() ;
