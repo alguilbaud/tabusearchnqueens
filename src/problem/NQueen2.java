@@ -73,7 +73,7 @@ public class NQueen2 {
 		
 			for( int k = 0; k < tailletabu ; ++k )
 			{
-				if( tabu[k][0] == courant && tabu[k][1] == i && tabu[k][2] == j )
+				if( tabu[k][0] == i && tabu[k][1] == j )
 				{
 					toReturn = true ;
 				}

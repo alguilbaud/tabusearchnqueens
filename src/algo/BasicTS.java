@@ -44,7 +44,7 @@ public class BasicTS {
 	{
 		int i = 1 ;
 		
-		while( i < dim && sol[i] == curr[i]  )
+		while( i < dim+1 && sol[i] == curr[i]  )
 		{
 			i++ ;
 		}
@@ -81,14 +81,18 @@ public class BasicTS {
 		}
 		*/
 		
+		int[][] v ;
+		int bestFit ;
+		int[] best_v ;
+		
 		while( k < maxIter && (best_s[0] != 0) ){
 			k++;
 			
-			int[][] v = nqueen.voisinage(best_s[0], s, tabulist);
+			v = nqueen.voisinage(best_s[0], s, tabulist);
 			
-			int bestFit = findbestfit(v) ;
+			bestFit = findbestfit(v) ;
 			
-			int[] best_v = v[bestFit] ;
+			best_v = v[bestFit] ;
 			
 			addTabu(s, best_v, tabulist, tabu) ;
 			tabu = (tabu+1) % tailleTabu ;
