@@ -25,13 +25,12 @@ public class NQueen2V2 {
 		
 		for(int i=1; i<dim+1; ++i)
 		{
-			boolean ok = false ;
-			
+		
 			Vector<Integer> Random = new Vector<Integer>() ;
 			
-			for( i = 0 ; i < dim ; ++i)
+			for(int j = 0 ; j < dim ; ++j)
 			{
-				Random.add(i+1) ;
+				Random.add(j+1) ;
 			}
 			
 			int k = (int)Math.floor( Math.random()*Random.size() ) ;
@@ -48,10 +47,8 @@ public class NQueen2V2 {
 		return newBirth ;
 	}
 	
-	public boolean isInTabu( int i, int j, int[][] tabu)
-	{
-		boolean toReturn = false ;
-			
+	public boolean isInTabu( int i, int fromI, int j, int fromJ, int[][] tabu)
+	{	
 			if( i > j )
 			{
 				int k = j ;
@@ -61,13 +58,13 @@ public class NQueen2V2 {
 		
 			for( int k = 0; k < tailletabu ; ++k )
 			{
-				if( tabu[k][0] == i && tabu[k][1] == j )
+				if( tabu[k][0] == i && tabu[k][2] == j && tabu[k][1] == fromI && tabu[k][2] == fromJ )
 				{
-					toReturn = true ;
+					return true ;
 				}
 			}
 		
-		return toReturn ;
+		return false ;
 	}
 	
 	public void fitness(int[] inSol)
@@ -95,7 +92,7 @@ public class NQueen2V2 {
 	
 	public int[] findBestFit(int best_s, int[] currSol, int[][] tabuList )
 	{
-		int[] best = new int[3] ;
+		int[] best = new int[5] ;
 		int bestFit = dim*dim*dim*dim ;
 		
 		int[] tempSol = new int[dim+1] ;
@@ -117,14 +114,16 @@ public class NQueen2V2 {
 					
 					fitness(tempSol) ;
 					
-					if( !isInTabu( currSol[i], j, tabuList)  || tempSol[0] < best_s )
+					if( !isInTabu( i, j, currSol[i], currSol[j], tabuList)  || tempSol[0] < best_s )
 					{	
 						if( tempSol[0] < bestFit)
 						{
 							bestFit = tempSol[0] ;
 							best[0] = i ;
 							best[1] = j ;
-							best[2] = bestFit ;
+							best[2] = currSol[i] ;
+							best[3] = currSol[j] ;
+							best[4] = bestFit ;
 						}
 					}
 						

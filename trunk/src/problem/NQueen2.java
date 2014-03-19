@@ -24,34 +24,20 @@ public class NQueen2 {
 		newBirth[0] = 0 ;
 		
 		for(int i=1; i<dim+1; ++i)
-		{
-			boolean ok = false ;
-			
+		{		
 			Vector<Integer> Random = new Vector<Integer>() ;
 			
-			for( i = 0 ; i < dim ; ++i)
+			for(int j = 0 ; j < dim ; ++j)
 			{
 				Random.add(i+1) ;
 			}
 			
-			while( !ok )
-			{
-				int k = (int)Math.floor( Math.random()*Random.size() ) ;
-				
-				newBirth[i] = Random.get(k) ; 
-				Random.remove(k) ;
-				
-				for(int j=1; j<i && !ok ; ++j)
-				{
-					ok = true ;
-					
-					if( newBirth[j] == newBirth[i] )
-					{
-						ok = false ;
-					}
-				}
-			}
-		}
+			int k = (int)Math.floor( Math.random()*Random.size() ) ;
+			
+			newBirth[i] = Random.get(k) ; 
+			Random.remove(k) ;
+
+	}
 		
 		System.out.println("End Generate Random");
 		
@@ -60,9 +46,8 @@ public class NQueen2 {
 		return newBirth ;
 	}
 	
-	public boolean isInTabu(int courant, int i, int j, int[][] tabu)
+	public boolean isInTabu(int i, int j, int[][] tabu)
 	{
-		boolean toReturn = false ;
 			
 			if( i > j )
 			{
@@ -75,11 +60,11 @@ public class NQueen2 {
 			{
 				if( tabu[k][0] == i && tabu[k][1] == j )
 				{
-					toReturn = true ;
+					return  true ;
 				}
 			}
 		
-		return toReturn ;
+		return false ;
 	}
 	
 	public void fitness(int[] inSol)
@@ -126,7 +111,7 @@ public class NQueen2 {
 					
 					fitness(voisin[courant]) ;
 					
-					if( !isInTabu(i, inSol[i], j, tabu)  || voisin[courant][0] < best_s )
+					if( !isInTabu(i, j, tabu)  || voisin[courant][0] < best_s )
 					{				
 						courant ++ ;
 					}
