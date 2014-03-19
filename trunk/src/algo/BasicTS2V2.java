@@ -44,9 +44,6 @@ public class BasicTS2V2 {
 	{
 		tabuL[iterator][0] = bestFit[0] ;
 		tabuL[iterator][1] = bestFit[1] ;
-		tabuL[iterator][2] = bestFit[2] ;
-		tabuL[iterator][3] = bestFit[3] ;
-		
 	}
 	
 	public int[] start(){
@@ -61,8 +58,6 @@ public class BasicTS2V2 {
 		{
 			tabulist[i][0] = 0 ;
 			tabulist[i][1] = 0 ;
-			tabulist[i][2] = 0 ;
-			tabulist[i][3] = 0 ;
 		}
 		
 		int k = 0;
@@ -77,7 +72,7 @@ public class BasicTS2V2 {
 		}
 		*/
 		
-		int[] bestFit = new int[5] ;
+		int[] bestFit = new int[3] ;
 		int[] best_v = new int[dim+1] ;
 		
 		while( k < maxIter && (best_s[0] != 0) )
@@ -91,9 +86,9 @@ public class BasicTS2V2 {
 				best_v[in] = s[in] ;
 			}
 			
-			best_v[bestFit[0]] = bestFit[3] ;
-			best_v[bestFit[1]] = bestFit[2] ;
-			best_v[0] = bestFit[4] ;
+			best_v[bestFit[0]] = s[bestFit[1]] ;
+			best_v[bestFit[1]] = s[bestFit[0]] ;
+			best_v[0] = bestFit[2] ;
 			
 			addTabu(bestFit, tabulist, tabu) ;
 			tabu = (tabu+1) % tailleTabu ;
