@@ -1,6 +1,22 @@
 package algo;
-
 import problem.NQueen2;
+
+
+/* Version 2 du BasicTS
+ * 
+ * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
+ * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
+ * Correspond à la recherche Tabu de la question 5)
+ * 
+ * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * 
+ * Algorithme de recherche tabou sur un nombre d'itération prédéfini.
+ * La taille de la liste tabu est passée en paramètre.
+ * 
+ */
+
+
 
 public class BasicTS2 {
 	private int maxIter;
@@ -16,6 +32,12 @@ public class BasicTS2 {
 		dim = n ;
 	}
 	
+	/* Constructeur de la classe BasicTS
+	 * 
+	 * n permet de définir le nombre de Queen et le problème NQueen associé
+	 * tabu permet de définir la taille de la liste tabu
+	 * 
+	 */	
 	public BasicTS2(int n, int tabu){
 		maxIter = n*n;
 		nqueen = new NQueen2(n, tabu);
@@ -23,6 +45,10 @@ public class BasicTS2 {
 		dim = n ;
 	}
 	
+	/* Fonction renvoyant le premier meilleur voisin
+	 * 
+	 * Fonction trouvant la première fitness minimale parmi une population de solution
+	 */
 	int findbestfit(int[][] inV)
 	{
 		int best = 0 ;
@@ -40,6 +66,11 @@ public class BasicTS2 {
 		return best ;
 	}
 	
+	/* Fonction permettant d'ajout à la Liste Tabu
+	 * 
+	 * Permet d'ajouter à la liste Tabu un couple i,j correspondant au dernier swap effectuée.
+	 * 
+	 */
 	public void addTabu(int[] sol, int[] curr, int[][] tabuL, int iterator)
 	{
 		int i = 1 ;
@@ -62,6 +93,12 @@ public class BasicTS2 {
 	
 	}
 	
+	/* Fonction démarrant la recherche Tabu
+	 * 
+	 * Fonction utilisée dans le MainTest pour démarrer la recherche Tabu.
+	 * Celle-ci s'arrête au bout de 10*n itération où dès qu'une solution exacte est trouvée.
+	 * 
+	 */
 	public int[] start(){
 		
 		int[] s = nqueen.generate() ;	

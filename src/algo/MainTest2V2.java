@@ -1,5 +1,18 @@
 package algo;
-import java.util.Scanner; 
+import java.util.Scanner;
+
+
+/* Version 2.2 du MainTest
+ * 
+ * Version améliorée n'ayant plus de problème de dépassement mémoire.
+ * Correspond à la recherche Tabu de la question 5)
+ * 
+ * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * 
+ * Main de notre Tabu Search
+ * 
+ */
+
 
 public class MainTest2V2 {
 

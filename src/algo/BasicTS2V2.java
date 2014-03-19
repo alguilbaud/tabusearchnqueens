@@ -1,6 +1,19 @@
 package algo;
-
 import problem.NQueen2V2;
+
+
+/* Version 2.2 du BasicTS
+ * 
+ * Version améliorée n'ayant plus de problème de dépassement mémoire.
+ * Correspond à la recherche Tabu de la question 5)
+ * 
+ * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * 
+ * Algorithme de recherche tabu sur un nombre d'itération prédéfini.
+ * La taille de la liste tabu est passée en paramètre.
+ * 
+ */
+
 
 public class BasicTS2V2 {
 	private int maxIter;
@@ -16,6 +29,13 @@ public class BasicTS2V2 {
 		dim = n ;
 	}
 	
+	
+	/* Constructeur de la classe BasicTS
+	 * 
+	 * n permet de définir le nombre de Queen et le problème NQueen associé
+	 * tabu permet de définir la taille de la liste tabu
+	 * 
+	 */
 	public BasicTS2V2(int n, int tabu){
 		maxIter = 10*n;
 		nqueen = new NQueen2V2(n, tabu);
@@ -23,12 +43,24 @@ public class BasicTS2V2 {
 		dim = n ;
 	}
 	
+	/* Fonction permettant d'ajout à la Liste Tabu
+	 * 
+	 * Permet d'ajouter à la liste Tabu un couple i,j correspondant au dernier swap effectuée.
+	 * 
+	 */
 	public void addTabu(int[] bestFit, int[][] tabuL, int iterator)
 	{
 		tabuL[iterator][0] = bestFit[0] ;
 		tabuL[iterator][1] = bestFit[1] ;
 	}
 	
+	
+	/* Fonction démarrant la recherche Tabu
+	 * 
+	 * Fonction utilisée dans le MainTest pour démarrer la recherche Tabu.
+	 * Celle-ci s'arrête au bout de 10*n itération où dès qu'une solution exacte est trouvée.
+	 * 
+	 */
 	public int[] start(){
 		
 		int[] s = nqueen.generate() ;	
