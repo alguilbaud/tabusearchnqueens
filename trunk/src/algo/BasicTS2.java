@@ -45,14 +45,14 @@ public class BasicTS2 {
 		int i = 1 ;
 		int j = 1 ;
 		
-		while( i < dim && sol[i] == curr[i]  )
+		while( i < dim+1 && sol[i] == curr[i]  )
 		{
 			i++ ;
 		}
 		
 		j = i + 1 ;
 		
-		while( j < dim && sol[j] == curr[j]	)
+		while( j < dim+1 && sol[j] == curr[j]	)
 		{
 			j++ ;
 		}
