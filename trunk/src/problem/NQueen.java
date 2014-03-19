@@ -33,17 +33,16 @@ public class NQueen {
 	
 	public boolean isInTabu(int courant, int i, int j, int[][] tabu)
 	{
-		boolean toReturn = false ;
 		
 			for( int k = 0; k < tailletabu ; ++k )
 			{
 				if( tabu[k][0] == courant && tabu[k][1] == i && tabu[k][2] == j )
 				{
-					toReturn = true ;
+					return true ;
 				}
 			}
 		
-		return toReturn ;
+		return false;
 	}
 	
 	public void fitness(int[] inSol)
