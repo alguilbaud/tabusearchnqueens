@@ -10,14 +10,14 @@ public class BasicTS2 {
 	
 	// Test d'automatisation des tailles tabu 
 	public BasicTS2(int n){
-		maxIter = 10*n ;
+		maxIter = n*n ;
 		nqueen = new NQueen2(n, (int) n/10 );
 		tailleTabu = (int) n/10;
 		dim = n ;
 	}
 	
 	public BasicTS2(int n, int tabu){
-		maxIter = 10*n;
+		maxIter = n*n;
 		nqueen = new NQueen2(n, tabu);
 		tailleTabu = tabu;
 		dim = n ;

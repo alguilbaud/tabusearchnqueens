@@ -21,23 +21,22 @@ public class NQueen2 {
 	{
 		int[] newBirth = new int[dim+1] ;
 		
-		newBirth[0] = 0 ;
+		Vector<Integer> Random = new Vector<Integer>() ;
+		
+		for(int j = 0 ; j < dim+1 ; ++j)
+		{
+			Random.add(j+1) ;
+		}
 		
 		for(int i=1; i<dim+1; ++i)
 		{		
-			Vector<Integer> Random = new Vector<Integer>() ;
-			
-			for(int j = 0 ; j < dim ; ++j)
-			{
-				Random.add(i+1) ;
-			}
-			
+	
 			int k = (int)Math.floor( Math.random()*Random.size() ) ;
 			
 			newBirth[i] = Random.get(k) ; 
 			Random.remove(k) ;
 
-	}
+		}
 		
 		System.out.println("End Generate Random");
 		

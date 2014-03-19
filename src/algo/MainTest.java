@@ -39,7 +39,7 @@ public class MainTest {
 			++j ;
 			sol[j] = TabuTest.start() ;
 	
-			System.out.println("Fitness Best Solution of " + j +" = "+ sol[j][0] ) ;
+			System.out.println("Fitness Best Solution of Try " + j +" = "+ sol[j][0] ) ;
 			
 		}
 		
