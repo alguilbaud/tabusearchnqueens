@@ -1,36 +1,49 @@
 package algo;
 
-import problem.NQueenV2;
+import problem.NQueen2V2;
 
-public class BasicTSV2 {
+public class BasicTS2V2 {
 	private int maxIter;
-	private NQueenV2 nqueen;
+	private NQueen2V2 nqueen;
 	private int dim;
 	private int tailleTabu;
 	
 	// Test d'automatisation des tailles tabu 
-	public BasicTSV2(int n){
+	public BasicTS2V2(int n){
 		maxIter = 10*n ;
-		nqueen = new NQueenV2(n, (int) n/10 );
+		nqueen = new NQueen2V2(n, (int) n/10 );
 		tailleTabu = (int) n/10;
 		dim = n ;
 	}
 	
-	public BasicTSV2(int n, int tabu){
+	public BasicTS2V2(int n, int tabu){
 		maxIter = 10*n;
-		nqueen = new NQueenV2(n, tabu);
+		nqueen = new NQueen2V2(n, tabu);
 		tailleTabu = tabu;
 		dim = n ;
 	}
 	
-	
+	int findbestfit(int[][] inV)
+	{
+		int best = 0 ;
+		int bestFit = dim*dim*dim*dim ;
+		
+		for( int i = 0 ; i < dim*(dim-1)/2 ; ++i)
+		{
+			if( bestFit > inV[i][0])
+			{
+				bestFit = inV[i][0] ;
+				best = i ;
+			}
+		}
+		
+		return best ;
+	}
 	
 	public void addTabu(int[] bestFit, int[][] tabuL, int iterator)
 	{
-		for( int i = 0; i < 3 ; ++i)
-		{
-			tabuL[iterator][i] = bestFit[i] ;
-		}
+		tabuL[iterator][0] = bestFit[0] ;
+		tabuL[iterator][1] = bestFit[1] ;
 	}
 	
 	public int[] start(){
@@ -39,13 +52,12 @@ public class BasicTSV2 {
 		
 		int[] best_s = s ;
 		
-		int[][] tabulist = new int[tailleTabu][3] ;
+		int[][] tabulist = new int[tailleTabu][2] ;
 		
 		for( int i = 0; i < tailleTabu ; i++)
 		{
 			tabulist[i][0] = 0 ;
 			tabulist[i][1] = 0 ;
-			tabulist[i][2] = 0 ;
 		}
 		
 		int k = 0;
@@ -60,11 +72,12 @@ public class BasicTSV2 {
 		}
 		*/
 		
-		int[] bestFit = new int[4];
-		int[] best_v = new int[dim+1];
+		int[] bestFit = new int[3] ;
+		int[] best_v = new int[dim+1] ;
 		
-		while( k < maxIter && (best_s[0] != 0) ){
-			k++;
+		while( k < maxIter && (best_s[0] != 0) )
+		{
+			k++ ;
 			
 			bestFit = nqueen.findBestFit(best_s[0], s, tabulist) ;
 			
@@ -73,9 +86,9 @@ public class BasicTSV2 {
 				best_v[in] = s[in] ;
 			}
 			
-			best_v[bestFit[0]] = bestFit[2] ;
-			
-			best_v[0] = bestFit[3] ;
+			best_v[bestFit[0]] = bestFit[1] ;
+			best_v[bestFit[1]] = bestFit[0] ;
+			best_v[0] = bestFit[2] ;
 			
 			addTabu(bestFit, tabulist, tabu) ;
 			tabu = (tabu+1) % tailleTabu ;
@@ -94,3 +107,4 @@ public class BasicTSV2 {
 		return best_s;
 	}
 }
+

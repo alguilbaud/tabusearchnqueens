@@ -1,11 +1,13 @@
 package problem;
 
-public class NQueenV2 {
+import java.util.Vector;
+
+public class NQueen2V2 {
 
 	private int dim;
 	private int tailletabu;
 	
-	public NQueenV2(int n, int m)
+	public NQueen2V2(int n, int m)
 	{
 		dim = n ;
 		tailletabu = m ;
@@ -23,26 +25,49 @@ public class NQueenV2 {
 		
 		for(int i=1; i<dim+1; ++i)
 		{
-			newBirth[i] = (int)Math.floor( (Math.random()*dim) +1) ;
+			boolean ok = false ;
+			
+			Vector<Integer> Random = new Vector<Integer>() ;
+			
+			for( i = 0 ; i < dim ; ++i)
+			{
+				Random.add(i+1) ;
+			}
+			
+			int k = (int)Math.floor( Math.random()*Random.size() ) ;
+			
+			newBirth[i] = Random.get(k) ; 
+			Random.remove(k) ;
+			
 		}
+		
+		System.out.println("End Generate Random");
 		
 		fitness(newBirth) ;
 		
 		return newBirth ;
 	}
 	
-	public boolean isInTabu(int courant, int i, int j, int[][] tabu)
+	public boolean isInTabu( int i, int j, int[][] tabu)
 	{
+		boolean toReturn = false ;
+			
+			if( i > j )
+			{
+				int k = j ;
+				j = i ;
+				i = k ;
+			}
 		
 			for( int k = 0; k < tailletabu ; ++k )
 			{
-				if( tabu[k][0] == courant && tabu[k][1] == i && tabu[k][2] == j )
+				if( tabu[k][0] == i && tabu[k][1] == j )
 				{
-					return true ;
+					toReturn = true ;
 				}
 			}
 		
-		return false;
+		return toReturn ;
 	}
 	
 	public void fitness(int[] inSol)
@@ -67,22 +92,19 @@ public class NQueenV2 {
 		inSol[0] = fit;
 	}
 	
+	
 	public int[] findBestFit(int best_s, int[] currSol, int[][] tabuList )
 	{
-		int[] best = new int[4] ;
+		int[] best = new int[3] ;
 		int bestFit = dim*dim*dim*dim ;
 		
 		int[] tempSol = new int[dim+1] ;
 		
-
-		
 		for(int i = 1; i<dim+1; ++i)
 		{
-			for(int j = 1; j<dim+1; ++j)
+			for(int j = i+1 ; j<dim+1; ++j)
 			{		
 				
-				if(j != currSol[i])
-				{
 					tempSol[0] = dim*dim*dim ;
 					
 					for(int k = 1; k <dim+1 ; ++k)
@@ -90,25 +112,24 @@ public class NQueenV2 {
 						tempSol[k] = currSol[k] ;
 					}
 					
-					tempSol[i] = j ; 
+					tempSol[i] = currSol[j] ; 
+					tempSol[j] = currSol[i] ;
 					
 					fitness(tempSol) ;
 					
-					if( !isInTabu(i, currSol[i], j, tabuList)  || tempSol[0] < best_s )
-					{				
-						if( tempSol[0] < bestFit )
+					if( !isInTabu( currSol[i], j, tabuList)  || tempSol[0] < best_s )
+					{	
+						if( tempSol[0] < bestFit)
 						{
 							bestFit = tempSol[0] ;
 							best[0] = i ;
-							best[1] = currSol[i] ;
-							best[2] = j ;
-							best[3] = bestFit ;
+							best[1] = j ;
+							best[2] = bestFit ;
 						}
 					}
 						
-				}
 			}
-		}	
+		}
 
 
 		return best ;
