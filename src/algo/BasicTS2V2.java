@@ -23,23 +23,6 @@ public class BasicTS2V2 {
 		dim = n ;
 	}
 	
-	int findbestfit(int[][] inV)
-	{
-		int best = 0 ;
-		int bestFit = dim*dim*dim*dim ;
-		
-		for( int i = 0 ; i < dim*(dim-1)/2 ; ++i)
-		{
-			if( bestFit > inV[i][0])
-			{
-				bestFit = inV[i][0] ;
-				best = i ;
-			}
-		}
-		
-		return best ;
-	}
-	
 	public void addTabu(int[] bestFit, int[][] tabuL, int iterator)
 	{
 		tabuL[iterator][0] = bestFit[0] ;
@@ -81,9 +64,9 @@ public class BasicTS2V2 {
 			
 			bestFit = nqueen.findBestFit(best_s[0], s, tabulist) ;
 			
-			for(int in = 1; in <dim+1 ; ++in)
+			for(int i = 1; i <dim+1 ; ++i)
 			{
-				best_v[in] = s[in] ;
+				best_v[i] = s[i] ;
 			}
 			
 			best_v[bestFit[0]] = s[bestFit[1]] ;
@@ -93,7 +76,14 @@ public class BasicTS2V2 {
 			addTabu(bestFit, tabulist, tabu) ;
 			tabu = (tabu+1) % tailleTabu ;
 			
-			s = best_v;
+			//s = best_v ;
+			
+			
+			for(int i = 0; i <dim+1 ; ++i)
+			{
+				s[i] = best_v[i] ;
+			}
+			
 			
 			if(best_v[0] < best_s[0])
 			{
@@ -102,7 +92,7 @@ public class BasicTS2V2 {
 			
 		}
 		
-		System.out.println("Final k = "+k);
+		//System.out.println("Final k = "+k);
 		
 		return best_s;
 	}

@@ -25,7 +25,6 @@ public class MainTest2V2 {
 		t = keyboard.nextInt() ;
 		
 		
-		
 		BasicTS2V2 TabuTest = new BasicTS2V2(n,m) ;
 		
 		int[][] sol = new int[t][n+1] ;
