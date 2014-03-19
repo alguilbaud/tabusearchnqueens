@@ -26,7 +26,7 @@ public class BasicTS2 {
 	
 	// Test d'automatisation des tailles tabu 
 	public BasicTS2(int n){
-		maxIter = n*n ;
+		maxIter = 10*n ;
 		nqueen = new NQueen2(n, (int) n/10 );
 		tailleTabu = (int) n/10;
 		dim = n ;
@@ -39,7 +39,7 @@ public class BasicTS2 {
 	 * 
 	 */	
 	public BasicTS2(int n, int tabu){
-		maxIter = n*n;
+		maxIter = 10*n;
 		nqueen = new NQueen2(n, tabu);
 		tailleTabu = tabu;
 		dim = n ;
