@@ -140,7 +140,13 @@ public class NQueen {
 					
 					fitness(voisin[courant]) ;
 					
-					if( !isInTabu(i, inSol[i], j, tabu)  || voisin[courant][0] < best_s )
+					if( voisin[courant][0] == 0 )
+					{
+						i = dim + 1 ;
+						j = dim + 1 ;
+						courant ++ ;
+					}
+					else if( !isInTabu(i, inSol[i], j, tabu)  || voisin[courant][0] < best_s )
 					{				
 						courant ++ ;
 					}

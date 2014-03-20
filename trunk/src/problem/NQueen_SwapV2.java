@@ -160,7 +160,16 @@ public class NQueen_SwapV2 {
 					
 					fitness(tempSol) ;
 					
-					if( !isInTabu( i, j, tabuList)  || tempSol[0] < best_s )
+					if( tempSol[0] == 0)
+					{
+						bestFit = tempSol[0] ;
+						best[0] = i ;
+						best[1] = j ;
+						best[2] = bestFit ;
+						
+						return best ;
+					}
+					else if( !isInTabu( i, j, tabuList)  || tempSol[0] < best_s )
 					{	
 						if( tempSol[0] < bestFit)
 						{
