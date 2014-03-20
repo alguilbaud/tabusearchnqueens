@@ -2,7 +2,7 @@ package algo;
 import java.util.Scanner; 
 
 
-/* Version 2 du Maintest
+/* Version Swap du Maintest
  * 
  * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
  * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 
 
-public class MainTest2 {
+public class Main_Swap {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -41,7 +41,7 @@ public class MainTest2 {
 		
 		
 		
-		BasicTS2 TabuTest = new BasicTS2(n,m) ;
+		TS_Swap TabuTest = new TS_Swap(n,m) ;
 		
 		int[][] sol = new int[t][n+1] ;
 		
@@ -60,7 +60,7 @@ public class MainTest2 {
 		
 		if(sol[j][0] == 0)
 		{
-			System.out.println("Solution Found Iteration " + j ) ;
+			System.out.println("Solution Found Try " + j ) ;
 			
 			// pour afficher les placement
 			for( int i = 1; i < n+1 ; i++ )

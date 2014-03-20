@@ -2,7 +2,7 @@ package problem;
 import java.util.Vector;
 
 
-/* Version 2.2 du NQueen
+/* Version Swap.2 du NQueen
  * 
  * Version améliorée n'ayant plus de problème de dépassement mémoire.
  * Correspond à la recherche Tabu de la question 5)
@@ -16,7 +16,7 @@ import java.util.Vector;
  */
 
 
-public class NQueen2V2 {
+public class NQueen_SwapV2 {
 
 	private int dim;
 	private int tailletabu;
@@ -27,7 +27,7 @@ public class NQueen2V2 {
 	 * m correspond à la taille de la liste Tabu
 	 * 
 	 */
-	public NQueen2V2(int n, int m)
+	public NQueen_SwapV2(int n, int m)
 	{
 		dim = n ;
 		tailletabu = m ;

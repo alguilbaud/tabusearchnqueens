@@ -47,7 +47,7 @@ public class MainTestV2 {
 		
 		int j = 0 ;
 		
-		while( sol[j][0] != 0 && j < t )
+		while( sol[j][0] != 0 && j+1 < t )
 		{
 			++j ;
 			sol[j] = TabuTest.start() ;
@@ -58,7 +58,7 @@ public class MainTestV2 {
 		
 		if(sol[j][0] == 0)
 		{
-			System.out.println("Solution Found Iteration " + j ) ;
+			System.out.println("Solution Found Try " + j ) ;
 			
 			// pour afficher les placement
 			for( int i = 1; i < n+1 ; i++ )
