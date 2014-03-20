@@ -1,8 +1,8 @@
 package algo;
-import problem.NQueen2;
+import problem.NQueen_Swap;
 
 
-/* Version 2 du BasicTS
+/* Version Swap du BasicTS
  * 
  * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
  * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
@@ -18,16 +18,16 @@ import problem.NQueen2;
 
 
 
-public class BasicTS2 {
+public class TS_Swap {
 	private int maxIter;
-	private NQueen2 nqueen;
+	private NQueen_Swap nqueen;
 	private int dim;
 	private int tailleTabu;
 	
 	// Test d'automatisation des tailles tabu 
-	public BasicTS2(int n){
+	public TS_Swap(int n){
 		maxIter = 10*n ;
-		nqueen = new NQueen2(n, (int) n/10 );
+		nqueen = new NQueen_Swap(n, (int) n/10 );
 		tailleTabu = (int) n/10;
 		dim = n ;
 	}
@@ -38,9 +38,9 @@ public class BasicTS2 {
 	 * tabu permet de définir la taille de la liste tabu
 	 * 
 	 */	
-	public BasicTS2(int n, int tabu){
+	public TS_Swap(int n, int tabu){
 		maxIter = 10*n;
-		nqueen = new NQueen2(n, tabu);
+		nqueen = new NQueen_Swap(n, tabu);
 		tailleTabu = tabu;
 		dim = n ;
 	}

@@ -1,8 +1,8 @@
 package algo;
-import problem.NQueen2V2;
+import problem.NQueen_SwapV2;
 
 
-/* Version 2.2 du BasicTS
+/* Version Swap.2 du BasicTS
  * 
  * Version améliorée n'ayant plus de problème de dépassement mémoire.
  * Correspond à la recherche Tabu de la question 5)
@@ -15,16 +15,16 @@ import problem.NQueen2V2;
  */
 
 
-public class BasicTS2V2 {
+public class TS_SwapV2 {
 	private int maxIter;
-	private NQueen2V2 nqueen;
+	private NQueen_SwapV2 nqueen;
 	private int dim;
 	private int tailleTabu;
 	
 	// Test d'automatisation des tailles tabu 
-	public BasicTS2V2(int n){
+	public TS_SwapV2(int n){
 		maxIter = 10*n ;
-		nqueen = new NQueen2V2(n, (int) n/10 );
+		nqueen = new NQueen_SwapV2(n, (int) n/10 );
 		tailleTabu = (int) n/10;
 		dim = n ;
 	}
@@ -36,9 +36,9 @@ public class BasicTS2V2 {
 	 * tabu permet de définir la taille de la liste tabu
 	 * 
 	 */
-	public BasicTS2V2(int n, int tabu){
+	public TS_SwapV2(int n, int tabu){
 		maxIter = 10*n;
-		nqueen = new NQueen2V2(n, tabu);
+		nqueen = new NQueen_SwapV2(n, tabu);
 		tailleTabu = tabu;
 		dim = n ;
 	}
@@ -130,7 +130,7 @@ public class BasicTS2V2 {
 			
 		}
 		
-		//System.out.println("Final k = "+k);
+		System.out.println("Final k = "+k);
 		
 		return best_s;
 	}

@@ -2,7 +2,7 @@ package algo;
 import java.util.Scanner;
 
 
-/* Version 2.2 du MainTest
+/* Version Swap.2 du MainTest
  * 
  * Version améliorée n'ayant plus de problème de dépassement mémoire.
  * Correspond à la recherche Tabu de la question 5)
@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 
 
-public class MainTest2V2 {
+public class Main_SwapV2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -38,7 +38,7 @@ public class MainTest2V2 {
 		t = keyboard.nextInt() ;
 		
 		
-		BasicTS2V2 TabuTest = new BasicTS2V2(n,m) ;
+		TS_SwapV2 TabuTest = new TS_SwapV2(n,m) ;
 		
 		int[][] sol = new int[t][n+1] ;
 		
@@ -57,7 +57,7 @@ public class MainTest2V2 {
 		
 		if(sol[j][0] == 0)
 		{
-			System.out.println("Solution Found Iteration " + j ) ;
+			System.out.println("Solution Found Try " + j ) ;
 			
 			// pour afficher les placement
 			for( int i = 1; i < n+1 ; i++ )

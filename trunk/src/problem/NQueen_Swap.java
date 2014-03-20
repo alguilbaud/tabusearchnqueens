@@ -2,7 +2,7 @@ package problem;
 import java.util.Vector;
 
 
-/* Version 2 du NQueen
+/* Version Swap du NQueen
  * 
  * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
  * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
@@ -18,7 +18,7 @@ import java.util.Vector;
  */
 
 
-public class NQueen2 {
+public class NQueen_Swap {
 
 	private int dim;
 	private int tailletabu;
@@ -29,7 +29,7 @@ public class NQueen2 {
 	 * m correspond à la taille de la liste Tabu
 	 * 
 	 */
-	public NQueen2(int n, int m)
+	public NQueen_Swap(int n, int m)
 	{
 		dim = n ;
 		tailletabu = m ;
