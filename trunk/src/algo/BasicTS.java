@@ -107,6 +107,7 @@ public class BasicTS {
 		}
 		
 		int k = 0;
+		int k2 = 0 ;
 		int tabu = 0;
 		
 		System.out.println("Fitness Beggining = " + best_s[0]) ;
@@ -122,7 +123,7 @@ public class BasicTS {
 		int bestFit ;
 		int[] best_v ;
 		
-		while( k < maxIter && (best_s[0] != 0) ){
+		while( k < maxIter && (best_s[0] != 0) && k2 < dim ){
 			k++;
 			
 			v = nqueen.voisinage(best_s[0], s, tabulist);
@@ -139,6 +140,11 @@ public class BasicTS {
 			if(best_v[0] < best_s[0])
 			{
 				best_s = best_v;
+				k2 = 0 ;
+			}
+			else
+			{
+				k2++ ;
 			}
 			
 		}

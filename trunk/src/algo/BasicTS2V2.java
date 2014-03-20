@@ -76,6 +76,7 @@ public class BasicTS2V2 {
 		}
 		
 		int k = 0;
+		int k2 = 0 ;
 		int tabu = 0;
 		
 		System.out.println("Fitness Beggining = " + best_s[0]) ;
@@ -90,7 +91,7 @@ public class BasicTS2V2 {
 		int[] bestFit = new int[3] ;
 		int[] best_v = new int[dim+1] ;
 		
-		while( k < maxIter && (best_s[0] != 0) )
+		while( k < maxIter && (best_s[0] != 0) && k2 < dim )
 		{
 			k++ ;
 			
@@ -120,6 +121,11 @@ public class BasicTS2V2 {
 			if(best_v[0] < best_s[0])
 			{
 				best_s = best_v;
+				k2 = 0 ;
+			}
+			else
+			{
+				k2++ ;
 			}
 			
 		}
