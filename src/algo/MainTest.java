@@ -49,7 +49,7 @@ public class MainTest {
 		
 		int j = 0 ;
 		
-		while( sol[j][0] != 0 && j < t )
+		while( sol[j][0] != 0 && j+1 < t )
 		{
 			++j ;
 			sol[j] = TabuTest.start() ;
