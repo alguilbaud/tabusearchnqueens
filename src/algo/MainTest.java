@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 /* Version 1 du Maintest
  * 
- * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
- * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
+ * Version de base avec le voisinage complet provoquant des problèmes de dépassement mémoire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisins est approximativement de taille n² = 1 000 000. 
  * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000.
- * Correspond à la recherche Tabu, cristallisation des Question 1) 3) et 4).
+ * Correspond à la recherche Tabu, cristallisation des Questions 1) 3) et 4).
  * 
- * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
  * Main de notre Tabu Search
  * 

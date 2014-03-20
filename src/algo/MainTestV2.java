@@ -2,12 +2,12 @@ package algo;
 import java.util.Scanner; 
 
 
-/* Version 1.2 du MainTest
+/* Version 2 du MainTest
  * 
  * Version améliorée n'ayant plus de problème de dépassement mémoire.
  * Correspond à la recherche Tabu, cristallisation des Question 1) 3) et 4).
  * 
- * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
  * Main de notre Tabu Search
  * 
@@ -60,7 +60,7 @@ public class MainTestV2 {
 		{
 			System.out.println("Solution Found Try " + j ) ;
 			
-			// pour afficher les placement
+			// pour afficher les placements
 			for( int i = 1; i < n+1 ; i++ )
 			{
 				System.out.println("Queen "+ i + " placed " + sol[j][i]) ;

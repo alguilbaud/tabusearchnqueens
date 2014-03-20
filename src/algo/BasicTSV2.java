@@ -2,14 +2,14 @@ package algo;
 import problem.NQueenV2;
 
 
-/* Version 1.2 du BasicTS
+/* Version 2 du BasicTS
  * 
  * Version améliorée n'ayant plus de problème de dépassement mémoire.
  * Correspond à la recherche Tabu, cristallisation des Question 1) 3) et 4).
  * 
- * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
- * Algorithme de recherche tabu sur un nombre d'itération prédéfini.
+ * Algorithme de recherche tabu sur un nombre d'itérations prédéfini.
  * La taille de la liste tabu est passée en paramètre.
  * 
  */
@@ -31,7 +31,7 @@ public class BasicTSV2 {
 	
 	/* Constructeur de la classe BasicTS
 	 * 
-	 * n permet de définir le nombre de Queen et le problème NQueen associé
+	 * n permet de définir le nombre de Queens et le problème NQueen associé
 	 * tabu permet de définir la taille de la liste tabu
 	 * 
 	 */
@@ -43,9 +43,9 @@ public class BasicTSV2 {
 	}
 	
 	
-	/* Fonction permettant d'ajout à la Liste Tabu
+	/* Fonction permettant d'ajouter à la Liste Tabu
 	 * 
-	 * Permet d'ajouter à la liste Tabu un couple i,j correspondant au dernier swap effectuée.
+	 * Permet d'ajouter à la liste Tabu un couple i,j correspondant au dernier mouvement effectué.
 	 * 
 	 */
 	public void addTabu(int[] bestFit, int[][] tabuL, int iterator)
@@ -58,8 +58,8 @@ public class BasicTSV2 {
 	
 	/* Fonction démarrant la recherche Tabu
 	 * 
-	 * Fonction utilisée dans le MainTest pour démarrer la recherche Tabu.
-	 * Celle-ci s'arrête au bout de 10*n itération où dès qu'une solution exacte est trouvée.
+	 * Fonction utilisée dans le MainTestV2 pour démarrer la recherche Tabu.
+	 * Celle-ci s'arrête au bout de 10*n itérations o dès qu'une solution exacte est trouvée.
 	 * 
 	 */
 	public int[] start(){
