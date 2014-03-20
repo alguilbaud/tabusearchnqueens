@@ -3,14 +3,14 @@ package problem;
 
 /* Version 1 du NQueen
  * 
- * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
- * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
+ * Version de base avec le voisinage complet provoquant des problèmes de dépassement mémoire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisins est approximativement de taille n² = 1 000 000. 
  * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
- * Correspond à la recherche Tabu, cristallisation des Question 1) 3) et 4).
+ * Correspond à la recherche Tabu, cristallisation des Questions 1) 3) et 4).
  * 
- * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
- * Classe Permettant la gestion du problème des NQueens, tel que le calcul de la Fitness,
+ * Classe permettant la gestion du problème des NQueens, tel que le calcul de la Fitness,
  * la création d'une solution de départ, la recherche de voisinage ...
  *
  * 
@@ -24,7 +24,7 @@ public class NQueen {
 	
 	/* Constructeur de la classe NQueen
 	 * 
-	 * n correspond au nombre de Queen à placer
+	 * n correspond au nombre de Queens à placer
 	 * m correspond à la taille de la liste Tabu
 	 * 
 	 */
@@ -35,7 +35,7 @@ public class NQueen {
 	}
 	
 	/* 
-	 * Fonction qui permet de récupérer le nombre de Queen du problème
+	 * Fonction qui permet de récupérer le nombre de Queens du problème
 	 */
 	public int getDim() {
 		return dim;
@@ -62,7 +62,7 @@ public class NQueen {
 		return newBirth ;
 	}
 	
-	/* Fonction vérifiant si un swap se trouve dans la liste Tabu
+	/* Fonction vérifiant si un mouvement se trouve dans la liste Tabu
 	 * 
 	 * Permet de vérifier, lors de la recherche de voisinage, si un voisin se trouve ou non
 	 * dans la Liste Tabu.
@@ -82,7 +82,7 @@ public class NQueen {
 		return false;
 	}
 	
-	/* Fonction Calculant la fitness d'une solution
+	/* Fonction calculant la fitness d'une solution
 	 * 
 	 * Fonction permettant de calculer la fitness d'une solution et de mettre celle-ci à jour.
 	 * 

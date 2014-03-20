@@ -4,12 +4,12 @@ import java.util.Vector;
 
 /* Version Swap du NQueen
  * 
- * Version de base avec le voisinage complet ayant des problème de dépassement mémoire lorsque n devient trop grand.
- * En effet, pour n = 1000 le nombre de voisin est approximativement de taill n² = 1 000 000. 
+ * Version de base avec le voisinage complet provoquant des problèmes de dépassement mémoire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisins est approximativement de taille n² = 1 000 000. 
  * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
  * Correspond à la recherche Tabu de la question 5)
  * 
- * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexi
+ * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
  * Classe Permettant la gestion du problème des NQueens, tel que le calcul de la Fitness,
  * la création d'une solution de départ, la recherche de voisinage ...
@@ -25,7 +25,7 @@ public class NQueen_Swap {
 	
 	/* Constructeur de la classe NQueen
 	 * 
-	 * n correspond au nombre de Queen à placer
+	 * n correspond au nombre de Queens à placer
 	 * m correspond à la taille de la liste Tabu
 	 * 
 	 */
@@ -36,7 +36,7 @@ public class NQueen_Swap {
 	}
 	
 	/* 
-	 * Fonction qui permet de récupérer le nombre de Queen du problème
+	 * Fonction qui permet de récupérer le nombre de Queens du problème
 	 */
 	public int getDim() {
 		return dim;
@@ -44,7 +44,7 @@ public class NQueen_Swap {
 
 	/* Fonction permettant de générer une première solution
 	 * 
-	 * Comme demandé dans l'exercice 5, la solution ainsi générée assure qu'aucune reine
+	 * Comme demandé dans la question 5, la solution ainsi générée assure qu'aucune reine
 	 * ne se trouve dans la colonne d'une autre.
 	 * 
 	 */
@@ -103,7 +103,7 @@ public class NQueen_Swap {
 		return false ;
 	}
 	
-	/* Fonction Calculant la fitness d'une solution
+	/* Fonction calculant la fitness d'une solution
 	 * 
 	 * Fonction permettant de calculer la fitness d'une solution et de mettre celle-ci à jour.
 	 * 
@@ -132,8 +132,8 @@ public class NQueen_Swap {
 	
 	/* Fonction permettant de créer le voisinage d'une solution donnée
 	 * 
-	 * Fonction rendant un tableau de solution correspondant toute à un swap possible  de la solution actuelle
-	 * Minus les solutions se trouvant dans la liste Tabu ( modulo le critère d'aspiration ).
+	 * Fonction rendant un tableau de solutions correspondant toutes à un swap possible de la solution actuelle
+	 * Minus les solutions se trouvant dans la liste Tabu (modulo le critère d'aspiration).
 	 * 
 	 * Cette version connait hélas un dépassement mémoire lorsque n devient trop grand.
 	 */
