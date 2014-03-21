@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 /* Version 1 du Maintest
  * 
- * Version de base avec le voisinage complet provoquant des problèmes de dépassement mémoire lorsque n devient trop grand.
- * En effet, pour n = 1000 le nombre de voisins est approximativement de taille n² = 1 000 000. 
- * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000.
- * Correspond à la recherche Tabu, cristallisation des Questions 1) 3) et 4).
+ * Version de base avec le voisinage complet provoquant des problï¿½mes de dï¿½passement mï¿½moire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisins est approximativement de taille nï¿½ = 1 000 000. 
+ * Le stockage nï¿½cessaire de chacun de ces voisins est donc de taille 1 000 000 000.
+ * Correspond ï¿½ la recherche Tabu, cristallisation des Questions 1) 3) et 4).
  * 
- * Auteur Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
+ * Auteur Delmï¿½e Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
  * Main de notre Tabu Search
  * 
@@ -62,7 +62,7 @@ public class MainTest {
 		{
 			System.out.println("Solution Found Try " + j ) ;
 			
-			// pour afficher les placement
+			// pour afficher les placements
 			for( int i = 1; i < n+1 ; i++ )
 			{
 				System.out.println("Queen "+ i + " placed " + sol[j][i]) ;
