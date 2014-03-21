@@ -62,7 +62,7 @@ public class MainTest {
 		{
 			System.out.println("Solution Found Try " + j ) ;
 			
-			// pour afficher les placements
+			// pour afficher les placement
 			for( int i = 1; i < n+1 ; i++ )
 			{
 				System.out.println("Queen "+ i + " placed " + sol[j][i]) ;

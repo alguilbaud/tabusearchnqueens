@@ -4,15 +4,15 @@ import problem.NQueen_Swap;
 
 /* Version Swap du BasicTS
  * 
- * Version de base avec le voisinage complet provoquant des problèmes de dépassement mémoire lorsque n devient trop grand.
- * En effet, pour n = 1000 le nombre de voisins est approximativement de taille n² = 1 000 000. 
- * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
- * Correspond à la recherche Tabu de la question 5)
+ * Version de base avec le voisinage complet provoquant des problï¿½mes de dï¿½passement mï¿½moire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisins est approximativement de taille nï¿½ = 1 000 000. 
+ * Le stockage nï¿½cessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
+ * Correspond ï¿½ la recherche Tabu de la question 5)
  * 
- * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
+ * Auteurs : Delmï¿½e Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
- * Algorithme de recherche tabu sur un nombre d'itérations prédéfini.
- * La taille de la liste tabu est passée en paramètre.
+ * Algorithme de recherche tabu sur un nombre d'itï¿½rations prï¿½dï¿½fini.
+ * La taille de la liste tabu est passï¿½e en paramï¿½tre.
  * 
  */
 
@@ -34,8 +34,8 @@ public class TS_Swap {
 	
 	/* Constructeur de la classe TS_Swap
 	 * 
-	 * n permet de définir le nombre de Queens et le problème NQueen associé
-	 * tabu permet de définir la taille de la liste tabu
+	 * n permet de dï¿½finir le nombre de Queens et le problï¿½me NQueen associï¿½
+	 * tabu permet de dï¿½finir la taille de la liste tabu
 	 * 
 	 */	
 	public TS_Swap(int n, int tabu){
@@ -47,7 +47,7 @@ public class TS_Swap {
 	
 	/* Fonction renvoyant le premier meilleur voisin
 	 * 
-	 * Fonction trouvant la première fitness minimale parmi une population de solutions
+	 * Fonction trouvant la premiï¿½re fitness minimale parmi une population de solutions
 	 */
 	int findbestfit(int[][] inV)
 	{
@@ -66,9 +66,9 @@ public class TS_Swap {
 		return best ;
 	}
 	
-	/* Fonction permettant d'ajouter à la Liste Tabu
+	/* Fonction permettant d'ajouter ï¿½ la Liste Tabu
 	 * 
-	 * Permet d'ajouter à la liste Tabu un couple i,j correspondant au dernier swap effectué.
+	 * Permet d'ajouter ï¿½ la liste Tabu un couple i,j correspondant au dernier swap effectuï¿½.
 	 * 
 	 */
 	public void addTabu(int[] sol, int[] curr, int[][] tabuL, int iterator)
@@ -93,10 +93,10 @@ public class TS_Swap {
 	
 	}
 	
-	/* Fonction démarrant la recherche Tabu
+	/* Fonction dï¿½marrant la recherche Tabu
 	 * 
-	 * Fonction utilisée dans le Main_Swap pour démarrer la recherche Tabu.
-	 * Celle-ci s'arrête au bout de 10*n itérations ou dès qu'une solution exacte est trouvée.
+	 * Fonction utilisï¿½e dans le Main_Swap pour dï¿½marrer la recherche Tabu.
+	 * Celle-ci s'arrï¿½te au bout de 10*n itï¿½rations ou dï¿½s qu'une solution exacte est trouvï¿½e.
 	 * 
 	 */
 	public int[] start(){
@@ -117,7 +117,7 @@ public class TS_Swap {
 		int k2 = 0 ;
 		int tabu = 0;
 		
-		System.out.println("Fitness Beggining = " + best_s[0]) ;
+		System.out.println("Fitness Beginning = " + best_s[0]) ;
 		
 		/*
 		for(int i = 1; i < dim+1 ; i++ )

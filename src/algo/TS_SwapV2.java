@@ -2,15 +2,15 @@ package algo;
 import problem.NQueen_SwapV2;
 
 
-/* 2ème version Swap du BasicTS
+/* 2ï¿½me version Swap du BasicTS
  * 
- * Version améliorée n'ayant plus de problème de dépassement mémoire.
- * Correspond à la recherche Tabu de la question 5)
+ * Version amï¿½liorï¿½e n'ayant plus de problï¿½me de dï¿½passement mï¿½moire.
+ * Correspond ï¿½ la recherche Tabu de la question 5)
  * 
- * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
+ * Auteurs : Delmï¿½e Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
- * Algorithme de recherche tabu sur un nombre d'itérations prédéfini.
- * La taille de la liste tabu est passée en paramètre.
+ * Algorithme de recherche tabu sur un nombre d'itï¿½rations prï¿½dï¿½fini.
+ * La taille de la liste tabu est passï¿½e en paramï¿½tre.
  * 
  */
 
@@ -32,8 +32,8 @@ public class TS_SwapV2 {
 	
 	/* Constructeur de la classe Ts_SwapV2
 	 * 
-	 * n permet de définir le nombre de Queens et le problème NQueen associé
-	 * tabu permet de définir la taille de la liste tabu
+	 * n permet de dï¿½finir le nombre de Queens et le problï¿½me NQueen associï¿½
+	 * tabu permet de dï¿½finir la taille de la liste tabu
 	 * 
 	 */
 	public TS_SwapV2(int n, int tabu){
@@ -43,9 +43,9 @@ public class TS_SwapV2 {
 		dim = n ;
 	}
 	
-	/* Fonction permettant d'ajouter à la Liste Tabu
+	/* Fonction permettant d'ajouter ï¿½ la Liste Tabu
 	 * 
-	 * Permet d'ajouter à la liste Tabu un couple i,j correspondant au dernier swap effectué.
+	 * Permet d'ajouter ï¿½ la liste Tabu un couple i,j correspondant au dernier swap effectuï¿½.
 	 * 
 	 */
 	public void addTabu(int[] bestFit, int[][] tabuL, int iterator)
@@ -55,10 +55,10 @@ public class TS_SwapV2 {
 	}
 	
 	
-	/* Fonction démarrant la recherche Tabu
+	/* Fonction dï¿½marrant la recherche Tabu
 	 * 
-	 * Fonction utilisée dans le Main_SwapV2 pour démarrer la recherche Tabu.
-	 * Celle-ci s'arrête au bout de 10*n itérations ou dès qu'une solution exacte est trouvée.
+	 * Fonction utilisï¿½e dans le Main_SwapV2 pour dï¿½marrer la recherche Tabu.
+	 * Celle-ci s'arrï¿½te au bout de 10*n itï¿½rations ou dï¿½s qu'une solution exacte est trouvï¿½e.
 	 * 
 	 */
 	public int[] start(){
@@ -79,7 +79,7 @@ public class TS_SwapV2 {
 		int k2 = 0 ;
 		int tabu = 0;
 		
-		System.out.println("Fitness Beggining = " + best_s[0]) ;
+		System.out.println("Fitness Beginning = " + best_s[0]) ;
 		
 		/*
 		for(int i = 1; i < dim+1 ; i++ )
