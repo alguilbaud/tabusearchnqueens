@@ -3,15 +3,15 @@ package problem;
 
 /* Version 1 du NQueen
  * 
- * Version de base avec le voisinage complet provoquant des problèmes de dépassement mémoire lorsque n devient trop grand.
- * En effet, pour n = 1000 le nombre de voisins est approximativement de taille n² = 1 000 000. 
- * Le stockage nécessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
- * Correspond à la recherche Tabu, cristallisation des Questions 1) 3) et 4).
+ * Version de base avec le voisinage complet provoquant des problï¿½mes de dï¿½passement mï¿½moire lorsque n devient trop grand.
+ * En effet, pour n = 1000 le nombre de voisins est approximativement de taille nï¿½ = 1 000 000. 
+ * Le stockage nï¿½cessaire de chacun de ces voisins est donc de taille 1 000 000 000. 
+ * Correspond ï¿½ la recherche Tabu, cristallisation des Questions 1) 3) et 4).
  * 
- * Auteurs : Delmée Quentin, Grouhan Benjamin, Guilbaud Alexis
+ * Auteurs : Delmï¿½e Quentin, Grouhan Benjamin, Guilbaud Alexis
  * 
- * Classe permettant la gestion du problème des NQueens, tel que le calcul de la Fitness,
- * la création d'une solution de départ, la recherche de voisinage ...
+ * Classe permettant la gestion du problï¿½me des NQueens, tel que le calcul de la Fitness,
+ * la crï¿½ation d'une solution de dï¿½part, la recherche de voisinage ...
  *
  * 
  */
@@ -24,8 +24,8 @@ public class NQueen {
 	
 	/* Constructeur de la classe NQueen
 	 * 
-	 * n correspond au nombre de Queens à placer
-	 * m correspond à la taille de la liste Tabu
+	 * n correspond au nombre de Queens ï¿½ placer
+	 * m correspond ï¿½ la taille de la liste Tabu
 	 * 
 	 */
 	public NQueen(int n, int m)
@@ -35,15 +35,15 @@ public class NQueen {
 	}
 	
 	/* 
-	 * Fonction qui permet de récupérer le nombre de Queens du problème
+	 * Fonction qui permet de rï¿½cupï¿½rer le nombre de Queens du problï¿½me
 	 */
 	public int getDim() {
 		return dim;
 	}
 
-	/* Fonction permettant de générer une première solution
+	/* Fonction permettant de gï¿½nï¿½rer une premiï¿½re solution
 	 * 
-	 * Comme demandé dans la première partie du TP, la solution ainsi générée est totalement aléatoire.
+	 * Comme demandï¿½ dans la premiï¿½re partie du TP, la solution ainsi gï¿½nï¿½rï¿½e est totalement alï¿½atoire.
 	 * 
 	 */
 	public int[] generate()
@@ -62,9 +62,9 @@ public class NQueen {
 		return newBirth ;
 	}
 	
-	/* Fonction vérifiant si un mouvement se trouve dans la liste Tabu
+	/* Fonction vï¿½rifiant si un mouvement se trouve dans la liste Tabu
 	 * 
-	 * Permet de vérifier, lors de la recherche de voisinage, si un voisin se trouve ou non
+	 * Permet de vï¿½rifier, lors de la recherche de voisinage, si un voisin se trouve ou non
 	 * dans la Liste Tabu.
 	 * 
 	 */
@@ -84,7 +84,7 @@ public class NQueen {
 	
 	/* Fonction calculant la fitness d'une solution
 	 * 
-	 * Fonction permettant de calculer la fitness d'une solution et de mettre celle-ci à jour.
+	 * Fonction permettant de calculer la fitness d'une solution et de mettre celle-ci ï¿½ jour.
 	 * 
 	 */
 	public void fitness(int[] inSol)
@@ -109,13 +109,13 @@ public class NQueen {
 		inSol[0] = fit;
 	}
 	
-	/* Fonction permettant de créer le voisinage d'une solution donnée
+	/* Fonction permettant de crï¿½er le voisinage d'une solution donnï¿½e
 	 * 
-	 * Fonction rendant un tableau de solution correspondant à tout changement de reine possible 
+	 * Fonction rendant un tableau de solution correspondant ï¿½ tout changement de reine possible 
 	 * de la solution actuelle Minus les solutions se trouvant dans la liste Tabu 
-	 * ( et modulo le critère d'aspiration ).
+	 * ( et modulo le critï¿½re d'aspiration ).
 	 * 
-	 * Cette version connait hélas un dépassement mémoire lorsque n devient trop grand.
+	 * Cette version connait hï¿½las un dï¿½passement mï¿½moire lorsque n devient trop grand.
 	 */
 	public int[][] voisinage(int best_s, int[] inSol, int[][] tabu)
 	{
