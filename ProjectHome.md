@@ -1,0 +1,1 @@
+Application of tabu search algorithm for the N-queens problem in Java.
